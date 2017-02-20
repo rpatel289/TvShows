@@ -1,0 +1,20 @@
+<div class="container">
+<div ng-if="show">
+<div class="row">
+<div  class="col-md-12 character-block">
+	<div>
+	<div class="col-xs-5 col-md-3">
+	
+    	<img ng-src="{{show.show.image.medium}}">
+    </div>
+    	<div class="col-xs-8 col-sm-4 col-md-6">
+    		<h2>{{show.show.name}}</h2><br />
+    		<span ng-bind-html="show.show.summary | trustHTML"></span>
+            <div align="right">
+            <a href="/shows/{{show.show.id}}?embed=cast">Details</a></div>
+    	</div>
+	</div>  
+</div>
+</div>
+</div>
+</div>

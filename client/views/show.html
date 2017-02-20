@@ -1,0 +1,30 @@
+<div class="more-results-block" align="top">
+<div class="container">
+<!-- <div ng-if="show"> -->
+<div class="row">
+	<div class="col-xs-5 col-md-3">
+		<h2><b>{{show.name}}</b></h2>
+        <span ng-repeat="g in show.genres">{{g}} |</span><br /><br />
+    	<img ng-src="{{show.image.medium}}">
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    	<div class="col-xs-12 col-sm-6 col-md-8">
+    		
+            <h4><b><p style="border-bottom: 1px solid black;">Summary</p></b></h4>
+    		<span ng-bind-html="show.summary | trustHTML"></span><br />
+    		<h4><b><p style="border-bottom: 1px solid black;">Cast</p></b></h4>
+    		<div  class="col-md-12 character-block" ng-repeat="cast in show._embedded.cast">
+    		<img ng-if="cast.person.image!=null" ng-src="{{cast.person.image.medium}}" width="50" height="70" align="left">
+            <img ng-if="cast.person.image==null && cast.character.image!=null" ng-src="{{cast.character.image.medium}}" width="50" height="70" align="left">
+            <img ng-if="cast.person.image==null && cast.character.image==null"ng-src="../images/no.jpg" width="50" height="70" align="left">
+    		<div class="col-md-4 more-results-block">{{cast.person.name}} ... {{cast.character.name}}</div>
+    		</div>
+    		</div>
+	</div>  
+</div>
+</div>

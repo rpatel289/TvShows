@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body>
+<div class="search-header">
+  <div class="container">
+    
+    <div class="row">
+      <div>
+        
+        <form>
+          <h3><p class="lead">Search for your favorite TV Show</p></h3>        
+          <div class="input-group">
+            <input type="text" class="form-control input-md" ng-model="name" />
+            <span class="input-group-btn">
+              <button 
+                type="submit"
+                class="btn btn-md btn-warning pull-right"
+                ng-click="search()">
+                search
+              </button>
+            </span>
+          </div>  
+          <p ng-show="shows.length === 0 ">
+            <i>* no results found</i>
+          </p>
+        </form>
+      </div>
+      <div ng-repeat="abc in shows">
+        <div show-preview show="abc">
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
